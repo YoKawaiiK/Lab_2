@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     // Создание объекта класса Phraser
     private Phraser phraser = new Phraser();
 
+
     // Создание преставления
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,16 +23,19 @@ public class MainActivity extends AppCompatActivity {
         // Получаем элементы
         TextView id_phrase = (TextView) findViewById(R.id.id_phrase); // Поле
         Button id_genButton = (Button) findViewById(R.id.id_genButton);
-
+        TextView tv_result = (TextView) findViewById(R.id.tv_result);
 
         // Установить начальную фразу
-        id_phrase.setText(phraser.PhraserGen());
+        String[] text_phrase_start = phraser.PhraserGen();
+        id_phrase.setText(text_phrase_start[0]);
+        tv_result.setText(text_phrase_start[1]);
 
         id_genButton.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
-                String text_phrase = phraser.PhraserGen();
+                String text_phrase[] = phraser.PhraserGen();
 
-                id_phrase.setText(text_phrase);
+                id_phrase.setText(text_phrase[0]);
+                tv_result.setText(text_phrase[1]);
             }
         });
     }
