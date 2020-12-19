@@ -29,7 +29,12 @@ public class Phraser {
         int r3 = (int) (Math.random() * threeLength);
         //Теперь строим фразу
         // TODO 1.1 Поставьте Breakpoint
-        String phrase = wordListOne[rl] + " " + wordListTwo[r2] + " " + wordListThree[r3];
+        String phrase = "Всё, что нам нужно – это " +
+                wordListOne[rl] + " " +
+                wordListTwo[r2] + " " +
+                wordListThree[r3]
+                + ".";
+        return phrase;
     }
 }
 
